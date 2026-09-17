@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>호텔리안 CHINAKOREA — 17년째, 중국 전 품목 수입 전문</title>
+<meta name="description" content="2009년 설립. 17년째 중국 전역에서 광범위한 품목을 직수입하고, 한국 화장품을 일본으로 수출하는 무역 전문기업 호텔리안(CHINAKOREA).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#122A3E;        /* 심해 네이비 잉크 */
+  --ink-soft:#3A5468;
+  --paper:#F6F7F4;      /* 서류 용지 */
+  --paper-deep:#ECEEE8;
+  --line:#C9CFC6;
+  --stamp:#B5342A;      /* 세관 도장 적색 */
+  --sea:#38658C;        /* 항로 청색 */
+  --gold:#9C7A3C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{
+  font-family:'Noto Sans KR',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:16px;
+}
+.mono{font-family:'IBM Plex Mono',monospace}
+.serif{font-family:'Noto Serif KR',serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ── 상단 항로 스트립 ───────────────── */
+.routebar{
+  background:var(--ink);color:#DDE6EC;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;
+  overflow:hidden;white-space:nowrap;padding:7px 0;
+}
+.routebar span{display:inline-block;padding-left:100%;animation:tick 42s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+.routebar b{color:#8FB7D6;font-weight:500}
+
+/* ── 내비게이션 ───────────────── */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,247,244,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand .kr{font-family:'Noto Serif KR',serif;font-weight:900;font-size:20px;letter-spacing:.02em}
+.brand .en{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.14em}
+.nav-links{display:flex;gap:26px;font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--stamp)}
+@media(max-width:720px){.nav-links{display:none}}
+
+/* ── 히어로 ───────────────── */
+.hero{padding:88px 0 64px;position:relative}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--sea);margin-bottom:22px;
+}
+.hero h1{
+  font-family:'Noto Serif KR',serif;font-weight:900;
+  font-size:clamp(34px,5.4vw,58px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+.hero h1 em{font-style:normal;color:var(--stamp)}
+.hero p.lede{
+  margin-top:26px;max-width:640px;font-size:17px;color:var(--ink-soft);
+}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:14px 30px;font-weight:700;font-size:15px;
+  border:1.5px solid var(--ink);transition:all .18s;
+}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn.fill:hover{background:var(--stamp);border-color:var(--stamp)}
+.btn.ghost:hover{border-color:var(--stamp);color:var(--stamp)}
+
+/* 세관 도장 */
+.stamp{
+  position:absolute;right:24px;top:70px;width:158px;height:158px;
+  border:3px double var(--stamp);border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:var(--stamp);transform:rotate(-11deg);opacity:.85;
+  font-family:'IBM Plex Mono',monospace;text-align:center;pointer-events:none;
+}
+.stamp .big{font-size:30px;font-weight:600;line-height:1}
+.stamp .small{font-size:10px;letter-spacing:.18em;margin-top:6px}
+.stamp .rule{width:70%;border-top:1px solid var(--stamp);margin:8px 0 6px}
+@media(max-width:900px){.stamp{display:none}}
+
+/* ── 항로 다이어그램 ───────────────── */
+.route{
+  margin-top:64px;border:1px solid var(--line);background:#fff;
+  padding:34px 30px 30px;
+}
+.route .label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-bottom:24px}
+.route-line{display:flex;align-items:center;gap:0}
+.node{flex:0 0 auto;text-align:center;min-width:110px}
+.node .flag{font-size:26px}
+.node .name{font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px;margin-top:4px}
+.node .sub{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);letter-spacing:.06em;margin-top:2px}
+.leg{flex:1;position:relative;height:2px;background:var(--sea);margin:0 8px;min-width:40px}
+.leg::after{
+  content:"";position:absolute;right:-1px;top:-4px;
+  border:5px solid transparent;border-left:8px solid var(--sea);
+}
+.leg .tag{
+  position:absolute;top:-26px;left:50%;transform:translateX(-50%);
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--sea);
+  background:#fff;padding:0 8px;white-space:nowrap;letter-spacing:.08em;
+}
+@media(max-width:640px){
+  .route-line{flex-direction:column;gap:18px}
+  .leg{width:2px;height:36px;min-width:0;margin:0}
+  .leg::after{right:-4px;top:auto;bottom:-1px;border:5px solid transparent;border-top:8px solid var(--sea)}
+  .leg .tag{top:50%;left:auto;right:auto;transform:translate(20px,-50%)}
+}
+
+/* ── 숫자 스트립 ───────────────── */
+.figures{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-deep);margin-top:72px}
+.figures .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+.fig{padding:34px 20px;text-align:center;border-left:1px solid var(--line)}
+.fig:first-child{border-left:none}
+.fig .num{font-family:'Noto Serif KR',serif;font-weight:900;font-size:38px;color:var(--ink)}
+.fig .num i{font-style:normal;font-size:20px;color:var(--stamp)}
+.fig .cap{font-size:13px;color:var(--ink-soft);margin-top:4px}
+@media(max-width:720px){.figures .wrap{grid-template-columns:repeat(2,1fr)}.fig:nth-child(3){border-left:none}}
+
+/* ── 공통 섹션 ───────────────── */
+section{padding:88px 0}
+.sec-head{margin-bottom:48px}
+.sec-head .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--stamp)}
+.sec-head h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(26px,3.6vw,38px);margin-top:12px;line-height:1.35}
+.sec-head p{margin-top:14px;color:var(--ink-soft);max-width:620px}
+
+/* ── 수입 역량 ───────────────── */
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.cap{background:#fff;padding:34px 30px}
+.cap .code{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sea);letter-spacing:.14em}
+.cap h3{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700;margin:10px 0 10px}
+.cap p{font-size:14.5px;color:var(--ink-soft)}
+@media(max-width:720px){.cap-grid{grid-template-columns:1fr}}
+
+/* ── 프로세스 ───────────────── */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step{border-top:3px solid var(--ink);padding-top:18px;position:relative}
+.step .no{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);letter-spacing:.14em}
+.step h3{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:700;margin:8px 0 8px}
+.step p{font-size:13.5px;color:var(--ink-soft)}
+@media(max-width:820px){.proc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.proc{grid-template-columns:1fr}}
+
+/* ── 취급 품목: 화물 명세서 스타일 (의도적으로 작게) ── */
+.manifest{background:#fff;border:1px solid var(--line)}
+.manifest-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 22px;border-bottom:1px solid var(--line);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--ink-soft);
+}
+.manifest-body{padding:10px 22px 18px;columns:3;column-gap:40px}
+.manifest-body div{
+  break-inside:avoid;padding:7px 0;border-bottom:1px dotted var(--line);
+  font-size:12.5px;color:var(--ink-soft);display:flex;gap:10px;align-items:baseline;
+}
+.manifest-body .c{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--sea);flex:0 0 44px}
+.manifest-note{padding:14px 22px;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);background:var(--paper-deep)}
+@media(max-width:820px){.manifest-body{columns:2}}
+@media(max-width:520px){.manifest-body{columns:1}}
+
+/* ── 일본 수출 ───────────────── */
+.export{background:var(--ink);color:#E5ECF1}
+.export .sec-head .tag{color:#E89A93}
+.export .sec-head h2{color:#fff}
+.export .sec-head p{color:#A9BCCB}
+.export-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.export-items{display:grid;gap:1px;background:#2A4257;border:1px solid #2A4257}
+.exp-item{background:#183349;padding:22px 24px}
+.exp-item .c{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8FB7D6;letter-spacing:.14em}
+.exp-item h4{font-family:'Noto Serif KR',serif;font-size:16px;color:#fff;margin-top:6px;font-weight:700}
+.exp-item p{font-size:13px;color:#A9BCCB;margin-top:4px}
+.export-copy p{font-size:15px;color:#C4D2DD;margin-bottom:16px}
+@media(max-width:820px){.export-grid{grid-template-columns:1fr}}
+
+/* ── 회사 개요: 등기부 스타일 ───────────────── */
+.registry{background:#fff;border:1.5px solid var(--ink);max-width:760px;margin:0 auto;position:relative}
+.registry::before{
+  content:"COMPANY REGISTRATION";position:absolute;top:-11px;left:28px;
+  background:#fff;padding:0 10px;font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px;letter-spacing:.24em;color:var(--ink-soft);
+}
+.registry table{width:100%;border-collapse:collapse}
+.registry th,.registry td{padding:15px 22px;border-bottom:1px solid var(--line);font-size:14.5px;text-align:left;vertical-align:top}
+.registry th{width:170px;font-weight:700;background:var(--paper-deep);font-size:13.5px}
+.registry tr:last-child th,.registry tr:last-child td{border-bottom:none}
+.registry td .mono{font-size:13.5px}
+@media(max-width:560px){.registry th{width:110px}}
+
+/* ── 문의 ───────────────── */
+.contact{background:var(--paper-deep);border-top:1px solid var(--line)}
+.contact-in{text-align:center;max-width:640px;margin:0 auto}
+.contact h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(24px,3.4vw,34px);line-height:1.4}
+.contact p{margin:16px 0 30px;color:var(--ink-soft)}
+.contact .mono a{font-size:15px}
+.contact .mono a:hover{color:var(--stamp)}
+
+/* ── 푸터 ───────────────── */
+footer{background:var(--ink);color:#8FA5B5;padding:44px 0 36px;font-size:13px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.foot-brand .kr{font-family:'Noto Serif KR',serif;color:#fff;font-weight:900;font-size:18px}
+.foot-brand .en{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;display:block;margin-top:2px}
+.foot-info{line-height:2}
+.foot-info .mono{font-size:12px}
+.copy{margin-top:30px;padding-top:18px;border-top:1px solid #2A4257;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em}
+
+/* 스크롤 리빌 */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- 항로 스트립 -->
+<div class="routebar" aria-hidden="true">
+  <span>
+    NINGBO 寧波 → INCHEON <b>■</b> SHANGHAI 上海 → BUSAN <b>■</b> YIWU 義烏 → INCHEON <b>■</b> GUANGZHOU 廣州 → BUSAN <b>■</b> QINGDAO 靑島 → INCHEON <b>■</b> YANTAI 煙台 → PYEONGTAEK <b>■</b> BUSAN 釜山 → OSAKA · HAKATA <b>■</b> INCHEON 仁川 → TOKYO <b>■</b> SINCE 2009 · 17TH YEAR IN TRADE <b>■</b>&nbsp;
+  </span>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <a href="#" class="brand">
+      <span class="kr">호텔리안</span>
+      <span class="en">CHINAKOREA TRADING</span>
+    </a>
+    <div class="nav-links">
+      <a href="#import">수입사업</a>
+      <a href="#process">프로세스</a>
+      <a href="#items">취급품목</a>
+      <a href="#export">일본수출</a>
+      <a href="#company">회사개요</a>
+      <a href="#contact">문의</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 히어로 -->
+<header class="hero">
+  <div class="wrap" style="position:relative">
+    <div class="stamp" aria-hidden="true">
+      <div class="small">EST. 2009</div>
+      <div class="big">17<span style="font-size:14px">년</span></div>
+      <div class="rule"></div>
+      <div class="small">IMPORT · EXPORT<br>KOREA CUSTOMS</div>
+    </div>
+    <div class="eyebrow">GENERAL TRADING COMPANY · IMPORT &amp; EXPORT · EST. 2009</div>
+    <h1 class="rv on">품목을 가리지 않습니다.<br>중국의 거의 모든 것을<br><em>17년째</em> 수입하고 있습니다.</h1>
+    <p class="lede rv on">2009년 설립 이래, 호텔용품에서 출발해 생활용품·화장품·포장재·친환경 소재·기업 판촉물까지 —
+    중국 전역의 제조 거점에서 광범위한 품목을 직접 소싱하고 통관하여 한국 시장에 공급해 왔습니다.
+    수천 건의 수입 실적이 곧 저희의 이력서입니다.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn fill">수입 소싱 문의</a>
+      <a href="#export" class="btn ghost">일본 수출 사업</a>
+    </div>
+
+    <!-- 무역 항로 다이어그램 -->
+    <div class="route rv on" role="img" aria-label="중국에서 한국으로 수입, 한국에서 일본으로 수출하는 무역 흐름도">
+      <div class="label">TRADE ROUTE — 수입과 수출, 양방향 무역</div>
+      <div class="route-line">
+        <div class="node">
+          <div class="flag">🇨🇳</div>
+          <div class="name">중국 전역</div>
+          <div class="sub">상하이·닝보·이우<br>광저우·칭다오·옌타이</div>
+        </div>
+        <div class="leg"><span class="tag">IMPORT · 2009~</span></div>
+        <div class="node">
+          <div class="flag">🇰🇷</div>
+          <div class="name">대한민국</div>
+          <div class="sub">인천·부산·평택<br>통관 → 전국 공급</div>
+        </div>
+        <div class="leg"><span class="tag">EXPORT · 2015~</span></div>
+        <div class="node">
+          <div class="flag">🇯🇵</div>
+          <div class="name">일본</div>
+          <div class="sub">K-화장품·마스크팩<br>화장품 용기</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 숫자 -->
+<div class="figures">
+  <div class="wrap">
+    <div class="fig"><div class="num">17<i>년째</i></div><div class="cap">중국 수입 업력 (2009~)</div></div>
+    <div class="fig"><div class="num">200<i>+</i></div><div class="cap">중국 현지 검증 공급사</div></div>
+    <div class="fig"><div class="num">500<i>+</i></div><div class="cap">국내 납품 거래처</div></div>
+    <div class="fig"><div class="num">11<i>년째</i></div><div class="cap">일본 수출 업력 (2015~)</div></div>
+  </div>
+</div>
+
+<!-- 수입 사업 -->
+<section id="import">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="tag">IMPORT — 中國 直輸入</div>
+      <h2>특정 품목이 아니라,<br>중국 수입 그 자체가 전문 분야입니다</h2>
+      <p>17년간 축적된 것은 품목 지식이 아니라 <b>수입의 방법론</b>입니다. 어떤 제품이든 공급사 발굴 → 검증 → 협상 → 품질관리 → 통관 → 납품까지, 동일한 정밀도로 수행합니다.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap rv">
+        <div class="code">CAPABILITY / 01</div>
+        <h3>중국 전역 직거래 네트워크</h3>
+        <p>상하이·닝보·이우·광저우·칭다오·옌타이 등 주요 제조 거점을 17년간 직접 발로 뛰며 구축한 공급망. 중간 무역상 없이 제조사와 직거래하여 원가 경쟁력을 확보합니다.</p>
+      </div>
+      <div class="cap rv">
+        <div class="code">CAPABILITY / 02</div>
+        <h3>중국어 직접 협상</h3>
+        <p>통역 없이 대표가 직접 중국어로 협상합니다. 사양 변경, 가격 조정, 납기 문제를 현장에서 즉시 해결하며, 미묘한 뉘앙스에서 발생하는 손실을 원천 차단합니다.</p>
+      </div>
+      <div class="cap rv">
+        <div class="code">CAPABILITY / 03</div>
+        <h3>OEM / ODM 소량 생산</h3>
+        <p>자체 브랜드 제품의 기획, 공장 매칭, 시제품 개발, 양산까지 전 과정 관리. 대형 무역상이 받지 않는 소량 MOQ도 오랜 거래 관계를 바탕으로 협상해 냅니다.</p>
+      </div>
+      <div class="cap rv">
+        <div class="code">CAPABILITY / 04</div>
+        <h3>통관·인증·규제 대응</h3>
+        <p>KC 인증, 화장품법, 전기용품 안전인증 등 한국 수입 규제의 사전 검토와 대응. 수천 건의 통관 경험으로 서류 한 장 때문에 화물이 묶이는 일을 만들지 않습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 프로세스 -->
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="tag">PROCESS</div>
+      <h2>상담에서 납품까지, 원스톱</h2>
+    </div>
+    <div class="proc">
+      <div class="step rv"><div class="no">STEP 01</div><h3>소싱 상담</h3><p>제품 사양·수량·예산 확인 후 최적 공급사 매칭. 품목 제한 없이 상담 가능합니다.</p></div>
+      <div class="step rv"><div class="no">STEP 02</div><h3>현지 검증</h3><p>공장 실사, 샘플 검수, 품질 테스트. 생산 전·중·후 3단계 검수로 불량을 걸러냅니다.</p></div>
+      <div class="step rv"><div class="no">STEP 03</div><h3>통관·물류</h3><p>해상/항공 운송, 수입 통관, 검역까지 일괄 처리. 최적 물류 루트로 비용을 절감합니다.</p></div>
+      <div class="step rv"><div class="no">STEP 04</div><h3>한국 납품</h3><p>국내 배송, 재고 관리, 사후 품질보증까지. 납품 후에도 책임은 계속됩니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 취급 품목 — 화물 명세서 스타일, 의도적으로 작게 -->
+<section id="items" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="tag">CARGO MANIFEST</div>
+      <h2>그동안 수입해 온 품목들</h2>
+      <p>아래는 일부일 뿐입니다. 목록에 없는 품목도 언제든 문의하십시오 — 17년간 그렇게 취급 품목이 늘어왔습니다.</p>
+    </div>
+    <div class="manifest rv">
+      <div class="manifest-head">
+        <span>IMPORT ITEM LIST — PARTIAL</span>
+        <span>HOTELIAN / CHINAKOREA</span>
+      </div>
+      <div class="manifest-body">
+        <div><span class="c">A-01</span>호텔 어메니티 (샴푸·바디워시·세트)</div>
+        <div><span class="c">A-02</span>객실 비품 (슬리퍼·가운·세탁백)</div>
+        <div><span class="c">A-03</span>호텔 소모품·FF&amp;E</div>
+        <div><span class="c">B-01</span>생활용품·주방용품</div>
+        <div><span class="c">B-02</span>욕실용품·인테리어 소품</div>
+        <div><span class="c">B-03</span>위생용품 (니트릴 장갑 등)</div>
+        <div><span class="c">C-01</span>화장품 OEM·뷰티 디바이스</div>
+        <div><span class="c">C-02</span>화장품 용기·부자재</div>
+        <div><span class="c">D-01</span>포장재·맞춤 패키지</div>
+        <div><span class="c">D-02</span>친환경 소재 (생분해·바이오 기반)</div>
+        <div><span class="c">E-01</span>기업 판촉물·사은품 맞춤 제작</div>
+        <div><span class="c">E-02</span>기타 — 품목 무관 맞춤 소싱</div>
+      </div>
+      <div class="manifest-note">※ 품목은 저희 사업의 결과이지 한계가 아닙니다. 새로운 품목일수록 저희의 소싱 방법론이 힘을 발휘합니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 일본 수출 -->
+<section id="export" class="export">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="tag">EXPORT — 對日 輸出</div>
+      <h2>수입만 하지 않습니다.<br>한국 제품을 일본으로 수출합니다</h2>
+      <p>2015년부터 K-뷰티를 중심으로 한국 제품을 일본 시장에 수출해 왔습니다. 수입과 수출을 모두 수행하는 양방향 무역 역량이 저희의 또 다른 축입니다.</p>
+    </div>
+    <div class="export-grid">
+      <div class="export-copy rv">
+        <p>일본 바이어와의 직거래 관계를 바탕으로, 한국 화장품·마스크팩·화장품 용기 등을 일본 호텔·유통 채널에 공급하고 있습니다.</p>
+        <p>일본 시장의 까다로운 품질 기준과 표기 규정(약기법 등)에 대응해 온 경험은, 반대로 한국으로 수입하는 제품의 품질 눈높이를 끌어올리는 자산이 되고 있습니다.</p>
+        <p>친환경 소재 기반 신제품의 일본 시장 진출도 함께 추진 중입니다.</p>
+      </div>
+      <div class="export-items rv">
+        <div class="exp-item"><div class="c">EXP-01 · SINCE 2015</div><h4>한국 화장품 · K-뷰티</h4><p>스킨케어, 기초 화장품 등 일본 유통 채널 공급</p></div>
+        <div class="exp-item"><div class="c">EXP-02</div><h4>마스크팩</h4><p>일본 시장 표기 규정 대응 및 안정 공급</p></div>
+        <div class="exp-item"><div class="c">EXP-03</div><h4>화장품 용기 · 부자재</h4><p>일본 화장품 제조사 대상 용기류 수출</p></div>
+        <div class="exp-item"><div class="c">EXP-04</div><h4>호텔용품 · 친환경 신소재</h4><p>일본 호텔 시장 대상 어메니티 및 친환경 소재 제품</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 회사 개요 -->
+<section id="company">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;max-width:640px;margin:0 auto 56px">
+      <div class="tag">COMPANY</div>
+      <h2>회사 개요</h2>
+      <p style="margin-left:auto;margin-right:auto">투명하게 공개합니다. 무역은 신뢰의 사업이기 때문입니다.</p>
+    </div>
+    <div class="registry rv">
+      <table>
+        <tr><th>상호</th><td><b>호텔리안 (HOTELIAN)</b> <span class="mono" style="color:var(--ink-soft)">· 브랜드 CHINAKOREA</span></td></tr>
+        <tr><th>대표자</th><td>홍순갑</td></tr>
+        <tr><th>사업자등록번호</th><td class="mono">132-23-55683</td></tr>
+        <tr><th>설립</th><td><span class="mono">2009</span>년 — 중국 수입 17년째, 일본 수출 11년째</td></tr>
+        <tr><th>사업 분야</th><td>중국 전 품목 직수입 · OEM/ODM 소싱 · 대일본 수출 (화장품·마스크팩·화장품 용기 등)</td></tr>
+        <tr><th>소재지</th><td>경기도 의정부시 충의로37번길 9-8, 102호</td></tr>
+        <tr><th>연락처</th><td class="mono"><a href="mailto:0107979@gmail.com">0107979@gmail.com</a> · <a href="tel:+82-70-7913-1231">070-7913-1231</a></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 문의 -->
+<section id="contact" class="contact">
+  <div class="wrap contact-in rv">
+    <h2>어떤 품목이든, 먼저 물어보십시오</h2>
+    <p>제품 아이디어나 사진 한 장이면 충분합니다. 소싱 가능 여부와 예상 조건을 신속하게 회신드립니다.<br>일본 수출 관련 협력 문의도 환영합니다.</p>
+    <a href="mailto:0107979@gmail.com" class="btn fill">이메일 문의 →</a>
+    <div class="mono" style="margin-top:22px">
+      <a href="mailto:0107979@gmail.com">0107979@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+82-70-7913-1231">070-7913-1231</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="kr">호텔리안</span>
+        <span class="en">CHINAKOREA TRADING · IMPORT &amp; EXPORT SINCE 2009</span>
+      </div>
+      <div class="foot-info">
+        상호 호텔리안 · 대표 홍순갑 · <span class="mono">사업자등록번호 132-23-55683</span><br>
+        경기도 의정부시 충의로37번길 9-8, 102호<br>
+        <span class="mono">0107979@gmail.com · 070-7913-1231</span>
+      </div>
+    </div>
+    <div class="copy">© 2026 HOTELIAN · CHINAKOREA. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<script>
+// 스크롤 리빌
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+
+<!-- 구조화 데이터: 검색엔진·LLM 가시성 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "호텔리안 (HOTELIAN)",
+  "alternateName": "CHINAKOREA",
+  "url": "https://chinakorea.pages.dev",
+  "foundingDate": "2009",
+  "founder": {"@type": "Person", "name": "홍순갑"},
+  "taxID": "132-23-55683",
+  "description": "2009년 설립. 17년째 중국 전역에서 광범위한 품목을 직수입하고, 2015년부터 한국 화장품·마스크팩·화장품 용기를 일본으로 수출하는 무역 전문기업.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "충의로37번길 9-8, 102호",
+    "addressLocality": "의정부시",
+    "addressRegion": "경기도",
+    "addressCountry": "KR"
+  },
+  "email": "0107979@gmail.com",
+  "telephone": "+82-70-7913-1231",
+  "areaServed": ["KR", "CN", "JP"],
+  "knowsAbout": ["중국 수입", "무역", "OEM ODM 소싱", "일본 수출", "K-뷰티 수출", "호텔용품", "통관"]
+}
+</script>
+</body>
+</html>
